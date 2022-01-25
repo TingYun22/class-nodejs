@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^14.3.0",
     "help": "^3.0.2"
   }
 }
