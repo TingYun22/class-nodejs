@@ -5,6 +5,8 @@
   "main": "index.js",
   "TingYun-type": "module",
   "scripts": {
+    "start": "SET NODE_ENV=production && node index.js",
+    "dev": "SET NODE_ENV=development && nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^14.3.0",
-    "help": "^3.0.2"
+    "ejs": "^3.1.6",
+    "express": "^4.17.2"
   }
 }
