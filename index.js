@@ -10,6 +10,7 @@ const upload=require(__dirname+'/modules/upload-imgs');
 const fs=require('fs').promises;
 const db = require('./modules/connect-db');
 const sessionStore = new MysqlStore({},db);
+const cors = require('cors');
 
 const app=express();
 
@@ -18,11 +19,12 @@ app.set('view engine','ejs');
 //     res.send(`<h2>我先到!</h2>`);
 // });
 
+app.use(cors());
 app.use(express.urlencoded({extended:false}));
 // Top-level middleware 放在最前面篩選
 app.use(express.json());
 app.use(express.static('public'));
-app.use(express.static('node_modules/joi'));
+app.use('/joi',express.static('node_modules/joi/dist/'));
 
 
 app.use(session({
